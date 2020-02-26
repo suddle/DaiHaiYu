@@ -15,22 +15,11 @@ export default {
     }
   },
    created(){
-            this.$axios({
-                method:'post',
-                url:'api',
-                data:this.qs.stringify({    //这里是发送给后台的数据
-                      userId:this.userId,
-                      token:this.token,
-                })
-            }).then((response) =>{          //这里使用了ES6的语法
-                console.log(response)       //请求成功返回的数据
-            }).catch((error) =>
-                console.log(error)       //请求失败返回的数据
-            })
-        }，
+            
+        },
   methods: {
       run:function(){
-         this.$axios({
+         	this.$axios({
                 method:'post',
                 url:'api',
                 data:this.qs.stringify({    //这里是发送给后台的数据
@@ -39,12 +28,14 @@ export default {
                 })
             }).then((response) =>{          //这里使用了ES6的语法
                 console.log(response)       //请求成功返回的数据
-            }).catch((error) =>
+            }).catch((error) =>{
                 console.log(error)       //请求失败返回的数据
             })
       }
-    }
+    
+	}
 }
+
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
@@ -62,5 +53,6 @@ li {
 a {
   color: #42b983;
 }
+
 
 </style>
