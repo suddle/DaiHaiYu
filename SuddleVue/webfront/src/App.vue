@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <el-container>
     <el-header class="head">
       <mt-header fixed title="固定在顶部"></mt-header>
@@ -6,6 +6,7 @@
     <el-main class="container_wrap">
       <div id="app" class="container">
         <router-view/>
+
       </div>
     </el-main>
     <el-footer class="foot">
