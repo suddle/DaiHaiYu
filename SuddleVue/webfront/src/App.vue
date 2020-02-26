@@ -1,12 +1,45 @@
 ﻿<template>
   <el-container>
-    <el-header class="head">
-      <mt-header fixed title="固定在顶部"></mt-header>
-    </el-header>
+
+   <mt-header title="快速问医生">
+      <router-link to="/" slot="left">
+         <mt-button icon="back">返回</mt-button>
+        <!--  <mt-button @click="handleClose">close</mt-button> -->
+       </router-link>
+       <mt-button icon="more" slot="right"></mt-button>
+   </mt-header>
+  
+  <!--   轮播图 -->
+  <mt-swipe :auto="3000" class="swipe-banner">
+    <mt-swipe-item>图片1</mt-swipe-item>
+    <mt-swipe-item>图片2</mt-swipe-item>
+    <mt-swipe-item>图片3</mt-swipe-item>
+  </mt-swipe>
+
+<!--   内容 -->
     <el-main class="container_wrap">
       <div id="app" class="container">
-        <router-view/>
+       <!--  <router-view/> -->
+       <div  class="swipe-banner2">
+          <picture class="pic"><p class="h60">图片1</p><p class="h40">快速问诊</p></picture>
+          <picture class="pic"><p class="h60">图片1</p><p class="h40">快速问诊</p></picture>
+          <picture class="pic"><p class="h60">图片1</p><p class="h40">快速问诊</p></picture>
+          <picture class="pic"><p class="h60">图片1</p><p class="h40">快速问诊</p></picture>
+       </div>
 
+        <div  class="swipe-banner margin-bottom10">
+        
+       </div>
+       <div  class="swipe-banner margin-bottom10">
+        
+       </div>
+       <div  class="swipe-banner margin-bottom10">
+        
+       </div>
+       <div  class="swipe-banner margin-bottom10">
+        
+       </div>
+        
       </div>
     </el-main>
     <el-footer class="foot">
@@ -28,6 +61,7 @@
   </el-container>
 </template>
 <script>
+
 export default {
   name: 'App'
 }
@@ -69,5 +103,34 @@ main{
 }
 .el-container{
 height:100%;
+}
+.swipe-banner{
+  height: 120px;
+  padding-top: 0;
+  background: #ccc;
+}
+.swipe-banner2{
+  height: 120px;
+  background: yellow;
+   display: flex;
+   display: -webkit-flex;
+   align-items:center;
+   justify-content:center;
+}
+.pic{
+  width: 20%;
+  height: 80%;
+  background: #fff;
+  display: inline-block;
+  margin: 0 10px 0 10px;
+}
+.h60{
+  height: 40%;
+}
+.h40{
+  height: 20%;
+}
+.margin-bottom10{
+  margin-bottom: 10px
 }
 </style>
