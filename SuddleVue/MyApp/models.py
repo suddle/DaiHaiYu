@@ -18,6 +18,8 @@ class User(models.Model):
     def __unicode__(self):
         return self.username
 
+class Img(models.Model):
+    imgpic=models.CharField(max_length=100)
 
 """
 最小化按钮 颜色改

@@ -24,8 +24,21 @@ SECRET_KEY = 'z#ed4_yxv6wxl85nmisqs9tnx-+b9#34nqu6^ozc#sft7e=-m%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['*']
+CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_ALLOW_ALL = True
+#允许所有的请求头
+CORS_ALLOW_HEADERS = ('*')
+CORS_ALLOW_METHODS = (
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+    'VIEW',
+)
+CORS_ORIGIN_WHITELIST = ( 'https://192.168.123.129:8080','https://192.168.123.1:8080',)
 # Application definition
 
 INSTALLED_APPS = [
@@ -35,8 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'corsheaders',
-    'MyApp'
+    'MyApp',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -44,13 +57,12 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-CORS_ALLOW_CREDENTIALS = True
-CORS_ORIGIN_ALLOW_ALL = True
+
 
 ROOT_URLCONF = 'SuddleVue.urls'
 
@@ -92,7 +104,7 @@ DATABASES = {
         'CONN_MAX_AGE': 5*60
     }
 }
-
+APPEND_SLASH=False
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
